@@ -3,16 +3,17 @@ import { map } from 'rxjs/operators';
 
 
 const o$ = new Observable(obs => {
-  obs.next('2. Estoy en el presente.')
-  obs.next('3. Sigo en el presente');
+  console.log('2. Estoy en el presente.')
+  obs.next('3. Sigo en el presente.')
+  obs.next('4. Aún en el presente');
   setTimeout(_ => {
-    obs.next('5. He viajado al futuro.')
+    obs.next('6. He viajado al futuro.')
     obs.complete();
   });
-})
+});
 
-console.log('1. Inicio');
+console.log('1. Inicio suscripción.');
 
 o$.subscribe(console.log);
 
-console.log('4. Ahora');
+console.log('5. Ahora');
